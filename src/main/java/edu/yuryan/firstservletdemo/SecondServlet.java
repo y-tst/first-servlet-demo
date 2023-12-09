@@ -18,10 +18,14 @@ public class SecondServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
+        String name = request.getParameter("name");
+        String surName = request.getParameter("surName");
+
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
+        out.println("<h3>" + "Hello " + name + " " + surName +  "</h3>");
         out.println("</body></html>");
     }
 
